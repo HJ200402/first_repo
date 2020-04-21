@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5주차 과제</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>To-do 목록</th>
+                <th>완료했나요?</th>
+            </tr>
+        </thead>
+        {% for todo in todos %} {% if todo.is_done == False %}
+        <!--만약 is_done 이 false이면 -->
+        <thead>
+       <tr>
+           <th>{{ todo.task }}</th>
+           <th>{{ todo.is_done }}</th>
+       </tr>
+      </thead>
+      {% endif %}{% endfor %}
+    </table>
+</body>
+</html>
