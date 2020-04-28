@@ -18,7 +18,8 @@ from django.urls import path
 from home.views import home_view, var_view
 from home.views import home_view_quote
 #from quote.views import quote_view
-from todo.views import todo_view, todo_view_progress
+from todo.views import todo_view, todo_view_progress, delete_todo
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,6 @@ urlpatterns = [
     path('var/', var_view),
     path("todos/", todo_view, name="todos"),
     
-    path('todos/in_progress', todo_view_progress, name="todos"),
+    path('todos/in_progress', todo_view_progress, name="in_progress"),
+    path('todos/<pk>/delete', delete_todo, name="todo_del")
 ]
